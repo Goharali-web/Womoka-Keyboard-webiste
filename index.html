@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOMOKA — Next-Generation Tactile Keyboard</title>
+  <meta name="description" content="Experience the ultimate tactile feedback and custom craftsmanship. Anodized CNC aluminum, gasket-mounted, and custom hot-swappable switches.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Loading Overlay -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-content">
+      <h1 class="loader-logo">WOMOKA</h1>
+      <div class="loader-bar-container">
+        <div id="loader-bar" class="loader-bar"></div>
+      </div>
+      <p id="loader-text" class="loader-text">PREPARING INTERACTIVE EXPERIENCE... 0%</p>
+    </div>
+  </div>
+
+  <!-- Header & Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">WOMOKA</a>
+      <nav class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#customizer">Customizer</a>
+        <a href="#specs">Specs</a>
+        <button id="nav-order-btn" class="btn btn-primary nav-cta">Order Now</button>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- Scroll Animation Area — appears at very top of page -->
+  <section id="experience" class="scroll-section">
+    <div class="scroll-canvas-container">
+      <canvas id="animation-canvas"></canvas>
+
+      <!-- Hero overlay — fades out as user begins scrolling -->
+      <div class="hero-overlay" id="hero-overlay">
+        <div class="hero-overlay-content">
+          <div class="badge">INTRODUCING THE WOMOKA ONE</div>
+          <h1 class="hero-title">ENGINEERED FOR THE<br><span class="gradient-text">ULTIMATE TYPING EXPERIENCE</span></h1>
+          <p class="hero-subtitle">Aerospace-grade CNC aluminum. Gasket-mounted precision. Custom hot-swap switches. Scroll to dismantle every layer.</p>
+          <div class="scroll-indicator">
+            <span class="scroll-text">SCROLL TO DISCOVER</span>
+            <div class="mouse-icon"><div class="wheel"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features Section — below the animation -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <span class="feature-step">01 / ARCHITECTURE</span>
+          <h2>Aerospace CNC Case</h2>
+          <p>Carved from a single block of 6063 anodized aluminum. Bead-blasted for a smooth metallic texture, then chamfered to perfection for premium ergonomics and light reflection.</p>
+          <div class="card-details">
+            <span class="detail-badge">CNC Machined</span>
+            <span class="detail-badge">6063 Aluminum</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-step">02 / INTERIOR</span>
+          <h2>Poron Gasket Mount</h2>
+          <p>Dual-stage gasket mounting isolated by high-density Poron foam. Eliminates harsh vibration, providing an incredibly bouncy, consistent, and satisfying typing experience.</p>
+          <div class="card-details">
+            <span class="detail-badge">Double Gasket</span>
+            <span class="detail-badge">Poron Dampeners</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-step">03 / PERFORMANCE</span>
+          <h2>Womoka Linear Switches</h2>
+          <p>Pre-lubed custom switches with POM stems and polycarbonate housings. Gold-plated springs deliver 45g actuation weight with an ultra-smooth 3.8mm total travel.</p>
+          <div class="card-details">
+            <span class="detail-badge">Factory Lubed</span>
+            <span class="detail-badge">POM Stems</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-step">04 / ELECTRONICS</span>
+          <h2>Tri-Mode Connectivity</h2>
+          <p>Advanced low-latency hardware supporting 2.4GHz wireless (1ms report rate), multi-device Bluetooth 5.1, and high-speed USB-C. Powered by a massive 4000mAh battery.</p>
+          <div class="card-details">
+            <span class="detail-badge">2.4GHz (1ms)</span>
+            <span class="detail-badge">4000mAh Battery</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Customizer Section -->
+  <section id="customizer" class="customizer-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TAILOR TO YOUR STYLE</span>
+        <h2 class="section-title">CHOOSE YOUR IDENTITY</h2>
+        <p class="section-desc">Customize the color scheme of your Womoka One and hear the acoustics before it lands on your desk.</p>
+      </div>
+
+      <div class="customizer-grid">
+        <!-- Interactive Preview -->
+        <div class="customizer-preview">
+          <div class="keyboard-view-container">
+            <div id="keyboard-glow" class="keyboard-neon-glow orange-glow"></div>
+            <!-- Showcase image representing the customized keyboard. Let's create an elegant CSS representation or use one of the frames as background -->
+            <div class="preview-card">
+              <span class="preview-label">LIVE PREVIEW</span>
+              <img id="customizer-img" src="./frames/ezgif-frame-001.jpg" alt="Womoka Custom Keyboard">
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Settings Panel -->
+        <div class="customizer-settings">
+          <!-- Color Customizer -->
+          <div class="control-group">
+            <h3>RGB Glow Color</h3>
+            <div class="color-options">
+              <button class="color-btn active" data-color="orange" style="background: linear-gradient(135deg, #ff7e5f, #feb47b);" aria-label="Amber Flare"></button>
+              <button class="color-btn" data-color="cyan" style="background: linear-gradient(135deg, #00f2fe, #4facfe);" aria-label="Cyan Aura"></button>
+              <button class="color-btn" data-color="purple" style="background: linear-gradient(135deg, #b92b27, #1565c0);" aria-label="Hyper Violet"></button>
+              <button class="color-btn" data-color="green" style="background: linear-gradient(135deg, #00ff87, #60efff);" aria-label="Acid Lime"></button>
+            </div>
+            <p class="control-desc">Selected Profile: <span id="glow-profile-name" class="highlight-text">Amber Flare</span></p>
+          </div>
+
+          <!-- Acoustics Selector -->
+          <div class="control-group">
+            <h3>Sound Profile (Acoustic Demo)</h3>
+            <div class="switch-options">
+              <button class="switch-btn active" data-switch="linear">
+                <span class="switch-title">Womoka Linears</span>
+                <span class="switch-desc">Smooth, quiet, deep "thock" sound.</span>
+              </button>
+              <button class="switch-btn" data-switch="tactile">
+                <span class="switch-title">Alpine Tactiles</span>
+                <span class="switch-desc">Crisp tactile bump, louder return.</span>
+              </button>
+              <button class="switch-btn" data-switch="silent">
+                <span class="switch-title">Midnight Silents</span>
+                <span class="switch-desc">Whisper quiet, padded landings.</span>
+              </button>
+            </div>
+            <div class="sound-player">
+              <button id="play-sound-btn" class="btn btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                Play Typing Audio
+              </button>
+              <!-- Hidden audio tag or audio synthesis in main.js -->
+              <audio id="typing-audio" preload="auto">
+                <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" type="audio/wav">
+              </audio>
+            </div>
+          </div>
+
+          <!-- Checkout CTA -->
+          <div class="preorder-box">
+            <div class="price-info">
+              <span class="original-price">$249.00</span>
+              <span class="current-price">$199.00</span>
+              <span class="save-tag">Order Now & Save 20%</span>
+            </div>
+            <button id="customizer-order-btn" class="btn btn-primary buy-btn">Order Womoka One</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specs -->
+  <section id="specs" class="specs-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">THE SPEC SHEET</span>
+        <h2 class="section-title">TECHNICAL SPECIFICATIONS</h2>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <div class="spec-icon">⌨️</div>
+          <h3>Layout</h3>
+          <p>75% Compact Layout (82 keys + 1 Rotary Encoder knob)</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🛡️</div>
+          <h3>Material</h3>
+          <p>Full 6063 Anodized CNC Machined Aluminum Case</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🪵</div>
+          <h3>Mounting</h3>
+          <p>Gasket Mounted with custom composite Poron isolation strips</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🔌</div>
+          <h3>Connectivity</h3>
+          <p>Tri-mode: 2.4GHz (1000Hz polling), Bluetooth 5.1, Wired USB-C</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">⚙️</div>
+          <h3>Hot-Swap</h3>
+          <p>5-pin Kailh hot-swappable sockets, north-facing LED compatible</p>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">🔋</div>
+          <h3>Battery</h3>
+          <p>4000mAh lithium-polymer (up to 300 hours with RGB off)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section id="preorder" class="cta-banner">
+    <div class="cta-container">
+      <div class="cta-inner">
+        <h2>ELEVATE YOUR WORKSPACE</h2>
+        <p>Orders are now open. Ready to ship in 2-3 business days. Join the revolution in premium tactile typing.</p>
+        <div class="cta-buttons">
+          <button id="banner-order-btn" class="btn btn-primary">Order Womoka One</button>
+          <a href="#experience" class="btn btn-outline">Explore Features Again</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3>WOMOKA</h3>
+        <p>Crafting high-performance keyboard technology for developers, gamers, and typing purists.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#customizer">Customizer</a></li>
+          <li><a href="#specs">Specs</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Newsletter</h4>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+          <input type="email" placeholder="Enter your email" required aria-label="Email Address">
+          <button type="submit" class="btn btn-primary btn-small">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 WOMOKA Labs. All rights reserved. Designed for visual excellence. <span class="creator-watermark">Created by Ghazanfar</span></p>
+    </div>
+  </footer>
+
+  <!-- Order Modal Overlay -->
+  <div id="order-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="modal-close-btn" class="modal-close" aria-label="Close Modal">&times;</button>
+      
+      <h2 class="modal-title">Place Your Order</h2>
+      <p class="modal-subtitle">Review your custom keyboard selection and fill out your details to finalize your purchase.</p>
+      
+      <div class="order-summary-box">
+        <h3>Configuration Summary</h3>
+        <div class="summary-details">
+          <div class="summary-item">
+            <span class="summary-label">RGB Glow Profile:</span>
+            <span id="summary-glow" class="summary-val">Amber Flare</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Switch Sound Profile:</span>
+            <span id="summary-switch" class="summary-val">Womoka Linears</span>
+          </div>
+          <div class="summary-item summary-total">
+            <span class="summary-label">Amount:</span>
+            <span class="summary-val">$199.00</span>
+          </div>
+        </div>
+      </div>
+      
+      <form id="order-form" class="order-form">
+        <div class="form-group">
+          <label for="order-name">Full Name</label>
+          <input type="text" id="order-name" name="name" required placeholder="Ghazanfar Ali">
+        </div>
+        
+        <div class="form-group">
+          <label for="order-email">Email Address</label>
+          <input type="email" id="order-email" name="email" required placeholder="ghazanfar@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="order-phone">Phone Number</label>
+          <input type="tel" id="order-phone" name="phone" required placeholder="+1 (555) 000-0000">
+        </div>
+        
+        <div class="form-group">
+          <label for="order-address">Shipping Address</label>
+          <textarea id="order-address" name="address" required placeholder="123 Main St, Apt 4B, New York, NY 10001" rows="3"></textarea>
+        </div>
+        
+        <div class="modal-actions">
+          <button type="button" id="modal-cancel-btn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Overlay -->
+  <div id="success-overlay" class="modal-overlay">
+    <div class="modal-content success-content">
+      <div class="success-icon">✓</div>
+      <h2 class="modal-title">Order Submitted!</h2>
+      <p id="success-message" class="modal-subtitle">Thank you for your order. We will reach out to you shortly via email with tracking details.</p>
+      
+      <div class="invoice-box">
+        <div class="invoice-row">
+          <span>Order ID:</span>
+          <strong id="invoice-id">#WMK-100234</strong>
+        </div>
+        <div class="invoice-row">
+          <span>Selected Glow:</span>
+          <span id="invoice-item">Womoka One (Amber Flare)</span>
+        </div>
+        <div class="invoice-row">
+          <span>Acoustics:</span>
+          <span id="invoice-switch">Womoka Linears</span>
+        </div>
+        <div class="invoice-row">
+          <span>Shipping To:</span>
+          <span id="invoice-shipping">Address details</span>
+        </div>
+      </div>
+      
+      <button id="success-close-btn" class="btn btn-primary">Back to Store</button>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
